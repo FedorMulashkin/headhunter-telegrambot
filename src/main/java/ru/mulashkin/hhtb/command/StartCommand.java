@@ -6,7 +6,7 @@ import ru.mulashkin.hhtb.service.SendBotMessageService;
 
 public class StartCommand implements Command {
     private final SendBotMessageService sendBotMessageService;
-    private final static String START_MESSAGE = "Привет. Я HH Telegram Bot. Я помогу тебе быть в курсе последних " +
+    public final static String START_MESSAGE = "Привет. Я HH Telegram Bot. Я помогу тебе быть в курсе последних " +
             "вакансий, которые тебе интересны. Я еще маленький и только учусь.";
 
     public StartCommand(SendBotMessageService sendBotMessageService) {
