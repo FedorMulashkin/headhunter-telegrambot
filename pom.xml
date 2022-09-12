@@ -10,9 +10,9 @@
     </parent>
     <groupId>ru.mulashkin</groupId>
     <artifactId>HHTB</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.1.0-SNAPSHOT</version>
     <name>HHTB</name>
-    <description>HHTB</description>
+    <description>Telegram bot for automation of job searching</description>
     <properties>
         <java.version>11</java.version>
     </properties>
