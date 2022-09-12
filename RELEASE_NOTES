@@ -4,3 +4,8 @@
 
 * Added stub telegram bot
 * Added Spring Boot to project
+
+## 0.2.0-SNAPSHOT
+
+* Added START, STOP and HELP commands
+* Add Service for commands processing
