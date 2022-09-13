@@ -9,12 +9,14 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import ru.mulashkin.hhtb.bot.HHFindNewJobBot;
 import ru.mulashkin.hhtb.service.SendBotMessageService;
 import ru.mulashkin.hhtb.service.SendBotMessageServiceImpl;
+import ru.mulashkin.hhtb.service.TelegramUserService;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 abstract class AbstractCommandTest {
     protected HHFindNewJobBot bot = Mockito.mock(HHFindNewJobBot.class);
     protected SendBotMessageService sendBotMessageService = new SendBotMessageServiceImpl(bot);
+    protected TelegramUserService telegramUserService = Mockito.mock(TelegramUserService.class);
 
     abstract String getCommandName();
 

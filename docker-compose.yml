@@ -13,12 +13,12 @@ services:
       BOT_DB_PASSWORD: ${BOT_DB_PASSWORD}
     restart: always
   hhtb-db:
-    image: postgres:14.5
+    image: postgres
     restart: always
     environment:
-      POSTGRES_DB: "hhtb-db"
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 1123581321
+      POSTGRES_DB: "hhtb_db"
+      POSTGRES_USER: ${BOT_DB_USERNAME}
+      POSTGRES_PASSWORD: ${BOT_DB_PASSWORD}
     ports:
       - '5432:5432'
     expose:

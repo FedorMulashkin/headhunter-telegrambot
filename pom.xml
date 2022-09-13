@@ -15,6 +15,7 @@
     <description>Telegram bot for automation of job searching</description>
     <properties>
         <java.version>11</java.version>
+        <unirest.version>3.13.11</unirest.version>
     </properties>
     <dependencies>
         <dependency>
@@ -49,6 +50,11 @@
             <groupId>org.telegram</groupId>
             <artifactId>telegrambots-spring-boot-starter</artifactId>
             <version>6.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.konghq</groupId>
+            <artifactId>unirest-java</artifactId>
+            <version>${unirest.version}</version>
         </dependency>
     </dependencies>
 

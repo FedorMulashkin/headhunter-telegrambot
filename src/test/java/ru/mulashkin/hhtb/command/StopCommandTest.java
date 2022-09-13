@@ -2,7 +2,6 @@ package ru.mulashkin.hhtb.command;
 
 import org.junit.jupiter.api.DisplayName;
 
-import static org.junit.jupiter.api.Assertions.*;
 @DisplayName("Unit-level testing for StopCommand")
 class StopCommandTest extends AbstractCommandTest{
 
@@ -18,6 +17,6 @@ class StopCommandTest extends AbstractCommandTest{
 
     @Override
     Command getCommand() {
-        return new StopCommand(sendBotMessageService);
+        return new StopCommand(sendBotMessageService, telegramUserService);
     }
 }

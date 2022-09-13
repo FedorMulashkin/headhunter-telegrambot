@@ -2,7 +2,6 @@ package ru.mulashkin.hhtb.command;
 
 import org.junit.jupiter.api.DisplayName;
 
-import static org.junit.jupiter.api.Assertions.*;
 @DisplayName("Unit-level testing for StartCommand")
 class StartCommandTest extends AbstractCommandTest{
 
@@ -18,6 +17,6 @@ class StartCommandTest extends AbstractCommandTest{
 
     @Override
     Command getCommand() {
-        return new StartCommand(sendBotMessageService);
+        return new StartCommand(sendBotMessageService, telegramUserService);
     }
 }

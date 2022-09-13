@@ -6,6 +6,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import ru.mulashkin.hhtb.service.SendBotMessageService;
+import ru.mulashkin.hhtb.service.TelegramUserService;
 
 import java.util.Arrays;
 
@@ -15,11 +16,12 @@ import static org.junit.jupiter.api.Assertions.*;
 class CommandContainerTest {
 
     private CommandContainer commandContainer;
-
+    private TelegramUserService telegramUserService;
     @BeforeEach
     public void init() {
         SendBotMessageService sendBotMessageService = Mockito.mock(SendBotMessageService.class);
-        commandContainer = new CommandContainer(sendBotMessageService);
+        TelegramUserService telegramUserService = Mockito.mock(TelegramUserService.class);
+        commandContainer = new CommandContainer(sendBotMessageService, telegramUserService);
     }
 
     @Test

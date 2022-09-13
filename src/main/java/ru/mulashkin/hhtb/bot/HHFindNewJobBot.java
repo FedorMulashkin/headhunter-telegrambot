@@ -1,16 +1,14 @@
 package ru.mulashkin.hhtb.bot;
 
+import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
-import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
-import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import ru.mulashkin.hhtb.command.CommandContainer;
 import ru.mulashkin.hhtb.service.SendBotMessageServiceImpl;
-
-import java.util.Locale;
+import ru.mulashkin.hhtb.service.TelegramUserService;
 
 import static ru.mulashkin.hhtb.command.CommandName.NO;
 
@@ -27,8 +25,9 @@ public class HHFindNewJobBot extends TelegramLongPollingBot {
 
     private final CommandContainer commandContainer;
 
-    public HHFindNewJobBot() {
-        this.commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this));
+    @Autowired
+    public HHFindNewJobBot(TelegramUserService telegramUserService) {
+        this.commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this), telegramUserService);
     }
 
     @Override
